@@ -164,12 +164,12 @@ Session.prototype.call = function () {
     self.peerConnection = new PeerConnection({
       iceServers: [
         { 
-          url: 'stun:stun.l.google.com:19302' 
+          urls: 'stun:stun.l.google.com:19302' 
         },
         { 
-          url: self.config.turn.host, 
+          urls: self.config.turn.host, 
           username: self.config.turn.username, 
-          password: self.config.turn.password 
+          credential: self.config.turn.password 
         }
       ]
     }, { optional: [ { DtlsSrtpKeyAgreement: true } ]});
